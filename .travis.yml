@@ -5,6 +5,8 @@ before_install:
   - python --version
   - pip install -U pip
   - pip install -U pytest
-install: 
-  - pip3 install -r requirements.txt
-script: pytest test_pswd.py
+  
+jobs:
+  include:
+    - script: pytest test_pswd.py
+      name: "Test password.py"
